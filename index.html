@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beankeeper - Your Cozy Productivity Companion</title>
+    
+    <!-- ============================================
+         LINKING OUR CSS FILE
+         This connects our HTML to our styles.css file
+         The browser will load and apply all our styles!
+         ============================================ -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- This is our app's skeleton structure -->
+    <div class="app-container">
+        
+        <!-- HEADER: Shows at the top -->
+        <header class="app-header">
+            <h1 class="app-title">☕ Beankeeper</h1>
+        </header>
+        
+        <!-- MAIN CONTENT: This is where pages will show -->
+        <main class="main-content">
+            
+            <!-- Welcome message - just for Step 1! -->
+            <div class="welcome-card">
+                <h2>Welcome to Beankeeper! 🌱</h2>
+                <p>Your cozy productivity companion</p>
+                <p class="text-muted">
+                    Track your tasks, build projects, and earn Beans 
+                    in this warm, witchy coffee shop vibe.
+                </p>
+                <p class="text-dim" style="margin-top: var(--space-lg); font-size: 0.9rem;">
+                    ✨ Step 1 Complete: Foundation laid!<br>
+                    Next up: Navigation & profile system
+                </p>
+            </div>
+            
+        </main>
+        
+        <!-- BOTTOM NAVIGATION: Fixed at bottom of screen -->
+        <nav class="bottom-nav">
+            <button class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span>Home</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>Tasks</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">📂</span>
+                <span>Projects</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">🛒</span>
+                <span>Shop</span>
+            </button>
+            <button class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span>More</span>
+            </button>
+        </nav>
+        
+    </div>
+    
+    <!-- JavaScript will go here in the next step! -->
+    <script>
+        // Step 1: Just a console message for now
+        console.log('☕ Beankeeper is brewing...');
+        
+        // Let's add a tiny bit of interactivity to test things out
+        // Get all the navigation buttons
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        // Add click listeners to each button
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove 'active' class from all buttons
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                this.classList.add('active');
+                
+                // Log which page was clicked (just for testing)
+                console.log('Navigated to:', this.textContent.trim());
+            });
+        });
+    </script>
+</body>
+</html>
