@@ -24,41 +24,80 @@
         <!-- MAIN CONTENT: This is where pages will show -->
         <main class="main-content">
             
-            <!-- Welcome message - just for Step 1! -->
-            <div class="welcome-card">
-                <h2>Welcome to Beankeeper! 🌱</h2>
-                <p>Your cozy productivity companion</p>
-                <p class="text-muted">
-                    Track your tasks, build projects, and earn Beans 
-                    in this warm, witchy coffee shop vibe.
-                </p>
-                <p class="text-dim" style="margin-top: var(--space-lg); font-size: 0.9rem;">
-                    ✨ Step 1 Complete: Foundation laid!<br>
-                    Next up: Navigation & profile system
-                </p>
-            </div>
+          <!-- ============================================
+                 PAGE SYSTEM
+                 Each page is a <section> with:
+                 - class="page" (for styling)
+                 - data-page="pagename" (for routing)
+                 - hidden attribute (starts hidden)
+                 ============================================ -->
+            
+            <!-- HOME/DASHBOARD PAGE -->
+            <section class="page" data-page="home">
+                <h2 class="page-title">Dashboard</h2>
+                <div class="welcome-card">
+                    <h3>Welcome back! ☕</h3>
+                    <p class="text-muted">Your cozy productivity space</p>
+                    <p class="text-dim" style="margin-top: var(--space-md);">
+                        Dashboard content coming soon...
+                    </p>
+                </div>
+            </section>
+            
+            <!-- TASKS PAGE -->
+            <section class="page" data-page="tasks" hidden>
+                <h2 class="page-title">Tasks</h2>
+                <div class="welcome-card">
+                    <p class="text-muted">✓ Your tasks will appear here</p>
+                </div>
+            </section>
+            
+            <!-- PROJECTS PAGE -->
+            <section class="page" data-page="projects" hidden>
+                <h2 class="page-title">Projects</h2>
+                <div class="welcome-card">
+                    <p class="text-muted">📂 Your projects will appear here</p>
+                </div>
+            </section>
+            
+            <!-- SHOP PAGE -->
+            <section class="page" data-page="shop" hidden>
+                <h2 class="page-title">Rewards Shop</h2>
+                <div class="welcome-card">
+                    <p class="text-muted">🛒 Your rewards will appear here</p>
+                </div>
+            </section>
+            
+            <!-- MORE/SETTINGS PAGE -->
+            <section class="page" data-page="more" hidden>
+                <h2 class="page-title">Settings & More</h2>
+                <div class="welcome-card">
+                    <p class="text-muted">⚙️ Settings and options coming soon</p>
+                </div>
+            </section>
             
         </main>
         
         <!-- BOTTOM NAVIGATION: Fixed at bottom of screen -->
         <nav class="bottom-nav">
-            <button class="nav-item active">
+            <!-- Each button has data-page attribute matching the page it opens -->
+            <button class="nav-item active" data-page="home">
                 <span class="nav-icon">🏠</span>
                 <span>Home</span>
             </button>
-            <button class="nav-item">
+            <button class="nav-item" data-page="tasks">
                 <span class="nav-icon">✓</span>
                 <span>Tasks</span>
             </button>
-            <button class="nav-item">
+            <button class="nav-item" data-page="projects">
                 <span class="nav-icon">📂</span>
                 <span>Projects</span>
             </button>
-            <button class="nav-item">
+            <button class="nav-item" data-page="shop">
                 <span class="nav-icon">🛒</span>
                 <span>Shop</span>
             </button>
-            <button class="nav-item">
+            <button class="nav-item" data-page="more">
                 <span class="nav-icon">⚙️</span>
                 <span>More</span>
             </button>
